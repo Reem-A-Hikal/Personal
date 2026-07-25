@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>About - Personal Bootstrap Template</title>
+    <title>About - Amera Yaseen</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -25,11 +25,6 @@
       rel="stylesheet"
     />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
@@ -38,11 +33,9 @@
   <body class="about-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div
-        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-end"
       >
-        <a href="index.html" class="logo d-flex align-items-center"> </a>
-
-        <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About</a></li>
@@ -76,7 +69,7 @@
             </div>
           </div>
         </div>
-        <nav class="breadcrumbs">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
           <div class="container">
             <ol>
               <li><a href="index.html">Home</a></li>
@@ -88,32 +81,13 @@
       <!-- End Page Title -->
 
       <!-- About Section -->
-      <div
-        class="row container"
-        style="align-items: center; margin-left: auto; margin-right: auto"
-      >
-        <section
-          id="about"
-          class="about section col-lg-6"
-          style="padding-bottom: 0; padding-top: 40px"
-        >
-          <div
-            class="container"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            style="padding: 0"
-          >
+      <div class="row container mx-auto align-items-center">
+        <section id="about" class="about section col-lg-6 pb-0">
+          <div class="container p-0" data-aos="fade-up" data-aos-delay="100">
             <div>
-              <div
-                class="col-lg-10 content"
-                style="padding-left: 0; padding-right: 0"
-              >
-                <div
-                  class="container section-title"
-                  data-aos="fade-up"
-                  style="padding-left: 0; padding-right: 0"
-                >
-                  <h2 style="font-size: 15px">Title</h2>
+              <div class="col-lg-10 content">
+                <div class="container section-title ps-0" data-aos="fade-up">
+                  <h2 class="fs-6">Title</h2>
                   <div>
                     <span>Textile</span>
                     <span class="description-title">Designer</span>
@@ -155,17 +129,9 @@
         <!-- End About Section -->
 
         <!-- Skills Section -->
-        <section
-          id="skills"
-          class="skills section col-lg-6"
-          style="padding-bottom: 0"
-        >
+        <section id="skills" class="skills section col-lg-6 pb-0">
           <!-- Section Title -->
-          <div
-            class="container section-title"
-            data-aos="fade-up"
-            style="padding-left: 0; padding-right: 0"
-          >
+          <div class="container section-title ps-0 pe-0" data-aos="fade-up">
             <h2>Skills</h2>
             <div>
               <span>My</span> <span class="description-title">Skills</span>
@@ -175,19 +141,20 @@
 
           <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row flex-column skills-content skills-animation">
-              <div class="col-lg-11" style="padding-left: 0">
+              <div class="col-lg-11 ps-0">
                 <div class="progress">
-                  <span class="skill"
-                    ><span>Adobe Photoshop</span> <i class="val">90%</i></span
-                  >
+                  <span class="skill">
+                    <span>Adobe Photoshop</span>
+                    <i class="val">90%</i>
+                  </span>
                   <div class="progress-bar-wrap">
-                    <div
+                    <progress
                       class="progress-bar"
-                      role="progressbar"
+                      value="90"
                       aria-valuenow="90"
                       aria-valuemin="0"
                       aria-valuemax="100"
-                    ></div>
+                    ></progress>
                   </div>
                 </div>
                 <!-- End Skills Item -->
@@ -197,13 +164,13 @@
                     ><span>Adobe Illustrator</span> <i class="val">90%</i></span
                   >
                   <div class="progress-bar-wrap">
-                    <div
+                    <progress
                       class="progress-bar"
-                      role="progressbar"
+                      value="90"
                       aria-valuenow="90"
                       aria-valuemin="0"
                       aria-valuemax="100"
-                    ></div>
+                    ></progress>
                   </div>
                 </div>
                 <!-- End Skills Item -->
@@ -216,13 +183,13 @@
                     <i class="val">90%</i></span
                   >
                   <div class="progress-bar-wrap">
-                    <div
+                    <progress
                       class="progress-bar"
-                      role="progressbar"
+                      value="90"
                       aria-valuenow="90"
                       aria-valuemin="0"
                       aria-valuemax="100"
-                    ></div>
+                    ></progress>
                   </div>
                 </div>
                 <!-- End Skills Item -->
@@ -316,11 +283,6 @@
           <a href="https://www.behance.net/ameraelrefaee" target="_blank"
             ><i class="bi bi-behance"></i
           ></a>
-          <a
-            href="https://www.linkedin.com/in/amera-yassen-38a993324/"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i
-          ></a>
         </div>
       </div>
     </footer>
@@ -339,13 +301,7 @@
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
