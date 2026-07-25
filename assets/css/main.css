@@ -712,7 +712,7 @@ section,
   z-index: 1000;
 }
 .hero img {
-  content: url("../img/hero-bg.png");
+  content: url("../img/hero-bg.webp");
   position: absolute;
   inset: 0;
   display: block;
@@ -724,7 +724,7 @@ section,
 
 @media (max-width: 500px) {
   .hero img {
-    content: url("../img/hero-bg-mobile.png");
+    content: url("../img/hero-bg-mobile.webp");
   }
 }
 
