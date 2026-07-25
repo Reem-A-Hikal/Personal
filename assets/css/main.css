@@ -6,20 +6,17 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Poppins", sans-serif;
-}
+  scroll-behavior: smooth;
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
+  /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
   --background-color: #000000; /* Background color for the entire website, including individual sections */
   --default-color: #fafafa; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #18d26e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
+  /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
   --nav-color: #fafafa; /* The default color of the main navmenu links */
   --nav-hover-color: #18d26e; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #1a1a1a; /* Used as the background color for mobile navigation menu */
@@ -41,11 +38,6 @@
   --heading-color: #ffffff;
   --surface-color: #292929f9;
   --contrast-color: #000000;
-}
-
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
 }
 
 /*--------------------------------------------------------------
@@ -93,7 +85,7 @@ h6 {
 .php-email-form .sent-message {
   display: none;
   color: #ffffff;
-  background: #059652;
+  background-color: #04723f;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -160,11 +152,6 @@ h6 {
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Global Header on Scroll
-------------------------------*/
-.scrolled .header {
   --background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -665,7 +652,6 @@ section,
 
 .section-title div {
   color: var(--heading-color);
-  margin: 0;
   margin: 0;
   font-size: 28px;
   font-weight: 700;
@@ -1404,13 +1390,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
-
-/*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
@@ -1509,7 +1488,3 @@ section,
 .contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
-/*--------------------------------------------------------------
-# About Page Layout Helpers
---------------------------------------------------------------*/
