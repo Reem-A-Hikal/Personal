@@ -7,11 +7,21 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme =
+          saved ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -22,11 +32,6 @@
     />
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
 
@@ -40,7 +45,7 @@
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-end"
       >
         <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-          <ul>
+          <ul class="navmenu-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
@@ -50,6 +55,15 @@
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          <i class="bi bi-moon-stars-fill"></i>
+          <i class="bi bi-sun-fill"></i>
+        </button>
       </div>
     </header>
 
@@ -97,20 +111,19 @@
             </ul>
             <!-- End Portfolio Filters -->
 
-            <div
-              class="row gy-4 isotope-container"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div class="row gy-4 isotope-container">
               <div
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/furn-1.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/furn-1.webp"
+                      class="img-fluid"
+                      alt="Furniture Design"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Furniture Design</h4>
                     <p>summer Upholstery fabrics</p>
@@ -137,11 +150,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-1.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-1.webp"
+                      class="img-fluid"
+                      alt="Women fashion"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>summer printed cardigan</p>
@@ -168,11 +184,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/kid-1.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/kid-1.webp"
+                      class="img-fluid"
+                      alt="Kids fashion"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Kids fashion</h4>
                     <p>Men's Chemise Fabric design</p>
@@ -199,16 +218,19 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/furn-2.png"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/furn-2.webp"
+                      class="img-fluid"
+                      alt="Furniture Design"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Furniture Design</h4>
                     <p>Tropical Fabric Design</p>
                     <a
-                      href="assets/img/portfolio/furn-2.png"
+                      href="assets/img/portfolio/furn-2.webp"
                       title="Tropical Fabric Design"
                       data-gallery="portfolio-gallery-app"
                       class="glightbox preview-link"
@@ -230,11 +252,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-2.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-2.webp"
+                      class="img-fluid"
+                      alt="Women fashion"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>Abstract Feathers Seamless Pattern</p>
@@ -261,16 +286,19 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/furn-3.png"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/furn-3.webp"
+                      class="img-fluid"
+                      alt="Furniture Design"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Furniture Design</h4>
                     <p>Plaid texture print</p>
                     <a
-                      href="assets/img/portfolio/furn-3.png"
+                      href="assets/img/portfolio/furn-3.webp"
                       title="Plaid texture print"
                       data-gallery="portfolio-gallery-app"
                       class="glightbox preview-link"
@@ -285,16 +313,19 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-3.png"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-3.webp"
+                      class="img-fluid"
+                      alt="Women fashion"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>Floral pattern color separated</p>
                     <a
-                      href="assets/img/portfolio/woman-3.png"
+                      href="assets/img/portfolio/woman-3.webp"
                       title="Floral pattern color separated"
                       data-gallery="portfolio-gallery-product"
                       class="glightbox preview-link"
@@ -315,11 +346,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/furn-4.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/furn-4.webp"
+                      class="img-fluid"
+                      alt="Furniture Design"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Furniture Design</h4>
                     <p>fall upholstery fabric design</p>
@@ -344,11 +378,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-4.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-4.webp"
+                      class="img-fluid"
+                      alt="Women fashion"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>Traditional x Grunge</p>
@@ -373,16 +410,19 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-5.png"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-5.webp"
+                      class="img-fluid"
+                      alt="Roses and lace border pattern"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>Roses and lace border pattern</p>
                     <a
-                      href="assets/img/portfolio/woman-5.png"
+                      href="assets/img/portfolio/woman-5.webp"
                       title="Roses and lace border pattern"
                       data-gallery="portfolio-gallery-product"
                       class="glightbox preview-link"
@@ -402,11 +442,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-6.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-6.webp"
+                      class="img-fluid"
+                      alt="Natural flowers Pattern"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>Natural flowers Pattern</p>
@@ -431,11 +474,14 @@
                 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
               >
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/woman-7.webp"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="portfolio-image-wrap">
+                    <img
+                      src="assets/img/portfolio/woman-7.webp"
+                      class="img-fluid"
+                      alt="animal print"
+                    />
+                    <div class="portfolio-skeleton"></div>
+                  </div>
                   <div class="portfolio-info">
                     <h4>Women fashion</h4>
                     <p>animal print</p>
@@ -458,7 +504,7 @@
       <!-- /Portfolio Section -->
     </main>
 
-    <footer id="footer" class="footer dark-background">
+    <footer id="footer" class="footer">
       <div class="container">
         <p>
           A textile designer transforming ideas into unique patterns that blend
@@ -471,7 +517,7 @@
             rel="noopener noreferrer"
             ><i class="bi bi-envelope-paper-fill"></i
           ></a>
-          <a href="https://www.behance.net/ameraelrefaee" target="_blank"
+          <a href="https://www.behance.net/AmiraYaseen9" target="_blank"
             ><i class="bi bi-behance"></i
           ></a>
         </div>
@@ -489,14 +535,7 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/custom.js" defer></script>
   </body>
 </html>

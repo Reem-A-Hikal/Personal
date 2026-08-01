@@ -7,11 +7,21 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme =
+          saved ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -24,7 +34,6 @@
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
@@ -36,7 +45,7 @@
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-end"
       >
         <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-          <ul>
+          <ul class="navmenu-list">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
@@ -46,12 +55,21 @@
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          <i class="bi bi-moon-stars-fill"></i>
+          <i class="bi bi-sun-fill"></i>
+        </button>
       </div>
     </header>
 
     <main class="main">
       <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background">
+      <section id="hero" class="hero section">
         <img src="assets/img/hero-bg.webp" alt="" data-aos="fade-in" />
 
         <div
@@ -76,7 +94,7 @@
               rel="noopener noreferrer"
               ><i class="bi bi-envelope-paper-fill"></i
             ></a>
-            <a href="https://www.behance.net/ameraelrefaee" target="_blank"
+            <a href="https://www.behance.net/AmiraYaseen9" target="_blank"
               ><i class="bi bi-behance"></i
             ></a>
           </div>
@@ -85,7 +103,7 @@
       <!-- /Hero Section -->
     </main>
 
-    <footer id="footer" class="footer dark-background">
+    <footer id="footer" class="footer">
       <div class="container">
         <p>
           A textile designer transforming ideas into unique patterns that blend
@@ -98,7 +116,7 @@
             rel="noopener noreferrer"
             ><i class="bi bi-envelope-paper-fill"></i
           ></a>
-          <a href="https://www.behance.net/ameraelrefaee" target="_blank"
+          <a href="https://www.behance.net/AmiraYaseen9" target="_blank"
             ><i class="bi bi-behance"></i
           ></a>
         </div>
@@ -116,12 +134,6 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/custom.js" defer></script>
   </body>
 </html>
