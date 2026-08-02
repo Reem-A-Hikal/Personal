@@ -82,6 +82,19 @@ h6 {
   --background-color: var(--scrolled-header-background-color);
 }
 
+.header .logo {
+  font-family: var(--mono-font);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--heading-color);
+  gap: 6px;
+}
+.header .logo .logo-mark {
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
 /* Theme-toggle  */
 .theme-toggle {
   display: inline-flex;
@@ -1052,6 +1065,7 @@ section,
 }
 
 /* ---------- Subtle grid on light sections ---------- */
+.page-title,
 section.section,
 .services.section,
 .about.section,
